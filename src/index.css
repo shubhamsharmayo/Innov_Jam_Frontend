@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define default font globally */
+body {
+  
+  font-optical-sizing: auto;
+  font-weight: 400; /* Default weight */
+  font-style: normal;
+}
+
+
+
+
+/* Global scrollbar styles */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Dark mode scrollbar styles */
+.dark *::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background: #6b7280;
+}
+
+.dark *::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Optionally, ensure scrollbars appear on body and html for content overflow */
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Apply overflow styles to any other elements you wish globally */
+
+
+
+@layer components {
+    .sidebar-style {
+        @apply relative flex items-center justify-start w-auto px-2 py-2 mt-2 mb-2 mx-1  text-black dark:text-green-400 
+        hover:bg-green-500  cursor-pointer
+        rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear gap-2
+    }
+
+    .sidebar-style-large {
+      @apply w-64 h-[calc(100vh-4.5rem)]
+          bg-white border-r border-gray-200 
+          dark:bg-gray-800 dark:border-gray-700 
+          flex flex-col 
+    }
+
+    .sidebar-style-small {
+      @apply fixed top-0 left-0 w-64 h-full bg-white dark:bg-gray-800 z-50;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+
+    .sidebar-tooltip {
+       @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 origin-left;
+    }
+
+    .button-style{
+      @apply flex items-center gap-2 bg-blue-400 dark:bg-blue-700 text-white/85 font-bold px-4 py-2 rounded-lg hover:bg-[#218dff] dark:hover:bg-[#1973c0] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#218dff] dark:focus:ring-[#1973c0]
+    }
+
+    .button-style-close{
+      @apply px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-800 
+      dark:hover:text-gray-200 bg-white dark:bg-gray-700 border border-gray-300 
+      dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-600 
+      focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 
+      dark:focus:ring-offset-gray-800 transition-colors
+    }
+
+    .button-style-rainbow{
+    @apply flex items-center gap-2 px-3 py-2 text-sm font-medium text-white 
+    bg-gradient-to-r from-blue-500 via-green-400 to-red-500
+    
+    rounded-lg hover:bg-gradient-to-r hover:from-blue-600 hover:via-green-500 hover:to-red-600 
+     transition-colors 
+      
+
+    }
+
+    .gradient-title {
+      @apply font-extrabold tracking-tighter text-transparent pr-2 pb-2 bg-gradient-to-br from-red-500 via-blue-100 to-blue-400 bg-clip-text;
+    }
+
+
+      .top-navigation-icon {
+        @apply text-gray-500
+        mr-3 ml-4
+        transition duration-300 ease-in-out 
+        hover:text-pink-400 
+        cursor-pointer;
+      }
+    
+      .top-navigation-icon:first {
+        @apply ml-auto mr-4;
+      }
+
+      .title-hashtag {
+        @apply text-lg tracking-wider font-semibold text-gray-500 
+        ml-2 my-auto;
+      }
+    
+      .title-text {
+        @apply text-xl text-gray-900 dark:text-gray-100 tracking-wider font-semibold text-opacity-80 
+        mr-auto ml-2 my-auto 
+        transition duration-300 ease-in-out;
+      }
+    
+      .search {
+        @apply w-1/5 flex items-center justify-start 
+        bg-gray-400 dark:bg-gray-600
+        text-gray-500
+        px-2 h-9 ml-0 mr-0 
+        rounded-md shadow-md
+        transition duration-300 ease-in-out;
+      }
+    
+      .search-input {
+        @apply w-full font-sans font-semibold
+        bg-transparent outline-none 
+        text-gray-800  placeholder-gray-200
+        pl-1 rounded;
+      }
+}
+
+
+.jodit-workplace {
+  ul {
+    list-style-type: disc; /* Bullet points */
+    margin-left: 1.5rem;
+    padding-left: 1rem;
+  }
+
+  ul li {
+    list-style-type: disc; /* Ensures bullet points for unordered lists */
+  }
+
+  ul li p,
+  ol li p {
+    margin: 0; /* Removes unnecessary space between list items */
+  }
+
+  ol {
+    list-style-type: decimal; /* Uses numbers for ordered lists */
+    margin-left: 1.5rem;
+    padding-left: 1rem;
+  }
+
+  ol li {
+    margin: 0;
+  }
+}
+
+.jodit-ui-group.jodit-ui-group_separated_true.jodit-ui-group_group_font.jodit-ui-group_before-spacer_true.jodit-ui-group_size_middle {
+  display: none;
+}
+
+.jodit-ui-group.jodit-ui-group_separated_true.jodit-ui-group_group_insert.jodit-ui-group_size_middle {
+  display: none;
+}
+
+.jodit-ui-group.jodit-ui-group_separated_true.jodit-ui-group_group_color.jodit-ui-group_before-spacer_true.jodit-ui-group_size_middle {
+  display: none;
+}
+
+.jodit-ui-group.jodit-ui-group_separated_true.jodit-ui-group_group_indent.jodit-ui-group_size_middle {
+  display: none;
+}
+
+.jodit-ui-group.jodit-ui-group_separated_true.jodit-ui-group_group_media.jodit-ui-group_size_middle {
+  display: none;
+}
+
+.jodit-ui-group.jodit-ui-group_separated_true.jodit-ui-group_group_search.jodit-ui-group_size_middle {
+  display: none;
+}
+
+.jodit-ui-group.jodit-ui-group_separated_true.jodit-ui-group_group_other.jodit-ui-group_size_middle {
+  display: none;
+}
+
+.jodit-ui-group.jodit-ui-group_separated_true.jodit-ui-group_group_script.jodit-ui-group_size_middle {
+  display: none;
+}
+
+
+.jodit-ui-group.jodit-ui-group_separated_true.jodit-ui-group_group_clipboard.jodit-ui-group_size_middle {
+  display: none;
+}
+
+
+.jodit-ui-group.jodit-ui-group_separated_true.jodit-ui-group_group_info.jodit-ui-group_size_middle {
+  display: none;
+}
+
+
+.jodit-ui-group.jodit-ui-group_separated_true.jodit-ui-group_group_source.jodit-ui-group_size_middle {
+  display: none;
+}
+
+.jodit-ui-group.jodit-ui-group_separated_true.jodit-ui-group_group_state.jodit-ui-group_size_middle {
+  display: none;
+}
+
+.jodit-toolbar-button.jodit-toolbar-button_size_middle.jodit-toolbar-button_variant_initial.jodit-toolbar-button_strikethrough.jodit-ui-group__strikethrough {
+  display: none;
+}
+
+.jodit-ui-spacer{
+  display: none;
+}
+
+.jodit-status-bar {
+  display: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
